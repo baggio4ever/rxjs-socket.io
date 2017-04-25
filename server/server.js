@@ -3,16 +3,20 @@
 let app = require('express')();
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
+var i=0;
 
 io.on('connection', (socket) => {
-  console.log('user connected');
+  i++;
+  console.log('user connected: ' +i);
   
   socket.on('disconnect', function(){
     console.log('user disconnected');
+    i--;
   });
   
   socket.on('add-message', (message) => {
-    io.emit('message', {type:'new-message', text: message});    
+    io.emit('message', {type:'new-message', text: message});   
+    io.emit('hello',{type:'greeting',text:'Hello!'+message});
   });
 });
 
