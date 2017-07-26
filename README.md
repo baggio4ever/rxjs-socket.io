@@ -17,3 +17,6 @@ From the client folder
 2-typings install
 
 3-ng serve (assumes Angular CLI)
+
+  別PCからアクセスしたい場合は、 ng server --host xx.xx.xx.xx 的に起動させるべし
+  また Clientの chat.service.ts にServerが起動しているIPアドレスを明記すべし

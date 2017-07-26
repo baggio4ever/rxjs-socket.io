@@ -6,7 +6,7 @@ import { ChatService }       from './chat.service';
   template: `<div *ngFor="let message of messages">
               {{message.text}}
              </div>
-             <input [(ngModel)]="message" (keypress)="onPress($event.keyCode)" (keyup.enter)="onEnter($event.keyCode)" /><button (click)="sendMessage()">Send</button>`,
+             <input [(ngModel)]="message" (keypress)="onPress($event.keyCode)" (keyup.enter)="onEnter($event.keyCode)" /><button (click)="sendMessage()">送信</button>`,
   providers: [ChatService]
 })
 export class ChatComponent implements OnInit, OnDestroy {
